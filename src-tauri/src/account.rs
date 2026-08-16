@@ -246,6 +246,7 @@ async fn login(
         .machine_name("iloader".into())
         .storage(create_sideloading_storage(app)?)
         .max_certs_behavior(MaxCertsBehavior::Prompt(Box::new(max_certs_callback)))
+        .enable_network_extension(true)
         .build();
 
     debug!("Built sideloader");
